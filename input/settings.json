@@ -1,0 +1,84 @@
+{
+  "multicores": [
+    {
+      "name":"MULTICORE0",
+      "ip":0,
+      "nbr_cores":8,
+      "frecuency":1400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    }
+  ],
+  "clusters":[
+    {"name":"SAN LUIS","id":0 ,"multicores": [0]}
+
+  ],
+  "programs":[
+    {"id":0,"name":"RIMAY_BOT","config_conn":["END_POINT"],
+      "activities":[
+        {"id":0,"name":"ADM_CREAR_EMERGENCIA","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[10.1, 6.436872]}}, "desc": "funcion"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1865.4, 283.540394]}}, "desc": "API telegram y gmail"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[13.3956051, 9.459627]}}, "desc": "comunicacion"},
+                  {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":0}}
+                  ]
+        },
+        {"id":1,"name":"ADM_CREAR_TAREA","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[32, 6.480740]}}, "desc": "funcion"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[7958, 512.129974]}}, "desc": "API telegram y gmail"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 0.8 , 0.78881]}}, "desc": "disco"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 34.1009218, 8.347177]}}, "desc": "comunicacion"},
+                  {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":1}}
+        ]
+        },
+        {"id":2,"name":"USUARIO_ACEPTAR_TAREA","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 15.6, 3.025814]}}, "desc": "funcion"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 2411, 488.522034]}},"desc": "API telegram y gmail"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 9.8753255, 9.29321]}}, "desc": "comunicacion"},
+                  {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":2}}
+        ]
+        },
+        {"id":3,"name":"USUARIO_TERMINA_TAREA","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 13.3, 2.71006]}}, "desc": "funcion"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[  2295, 433.78105]}},"desc": "API telegram y gmail"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[  7.8826044, 2.606678]}}, "desc": "comunicacion"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":3}}
+        ]
+        }
+      ]
+    },
+    {"id":1,"name":"RIMAY_BACKEND","config_conn":["DB"],
+      "activities":[
+        {"id":0,"name":"GUARDA_EMERGENCIA","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[12.705111, 1.61161]}}, "desc": "funcion"},
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[20.0992839, 4.786262]}}, "desc": "db"}
+        ]
+        },
+        {"id":1,"name":"GUARDA_TAREA","works":[
+                {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 29.9884983, 1.414997]}}, "desc": "funcion"},
+                {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 65.7105799, 4.765989]}}, "desc": "db"}
+        ]
+        },
+        {"id":2,"name":"GUARDA_ACEPTAR_TAREA","works":[
+                {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 21.1155718,  1.451453]}}, "desc": "funcion"},
+                {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 102.5091027, 2.985687]}}, "desc": "db"}
+        ]
+        },
+        {"id":3,"name":"GUARDA_TERMINAR_TAREA","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 21.529374, 1.7929314015]}}, "desc": "funcion"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[ 82.1880216, 20.25673591]}}, "desc": "db"}
+        ]
+        }
+      ]
+    }
+  ],
+  "programs_deployments":[
+      { "ip":0, "port":0, "program_id":0, "id": "0_0", "nbr_threads":10, "config_conn":[{"key":"END_POINT","value":"0_1"}]},
+      { "ip":0, "port":1, "program_id":1, "id": "0_1", "nbr_threads":10, "config_conn":[]}
+  ],
+  "types_works":[
+    "WorkProcess","WorkRequestToApi","WorkRequestToMongo"
+  ],
+  "network":{"name":"internet","velocity":0, "unit_trasfer_rate":"kbps"},
+  "client":{ "trace_path" : "input/trace_ayni.data" }
+}

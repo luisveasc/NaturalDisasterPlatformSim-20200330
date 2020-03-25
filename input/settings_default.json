@@ -1,0 +1,58 @@
+{
+  "multicores": [
+    {
+      "name":"MULTICORE0",
+      "ip":0,
+      "nbr_cores":8,
+      "frecuency":1400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    },{
+      "name":"MULTICORE1",
+      "ip":1,
+      "nbr_cores":4,
+      "frecuency":2400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    },{
+      "name":"citiaps1",
+      "ip":2,
+      "nbr_cores":4,
+      "frecuency":2400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    }
+  ],
+  "clusters":[
+    {"name":"SAN LUIS","id":0 ,"multicores": [0,1]},
+    {"name":"citiaps","id":0 ,"multicores": [2]}
+  ],
+  "programs":[
+    {"id":0,"name":"RIMAY_BOT","config_conn":["END_POINT"],
+      "activities":[
+        {"id":0,"name":"SOLICITUD DE REGISTRO","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0 , 1.0 ]}}},
+                  {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":0}}
+                  ]
+        }
+      ]
+    },
+    {"id":1,"name":"RIMAY_BACKEND","config_conn":["DB"],
+      "activities":[
+        {"id":0,"name":"GUARDA SOLICITUD DE REGISTRO","works":[
+                  {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0 , 1.0 ]}}}
+                  ]
+        }
+      ]
+    }
+  ],
+  "programs_deployments":[
+      { "ip":0, "port":0, "program_id":0, "id": "0_0", "nbr_threads":10, "config_conn":[{"key":"END_POINT","value":"1_1"}]},
+      { "ip":1, "port":1, "program_id":1, "id": "1_1", "nbr_threads":2, "config_conn":[]}
+  ],
+  "types_works":[
+    "WorkProcess","WorkRequestToApi","WorkRequestToMongo"
+  ],
+  "network":{"name":"internet","velocity":100, "unit_trasfer_rate":"kbps"},
+  "client":{ "trace_path" : "input/trace.data" }
+}

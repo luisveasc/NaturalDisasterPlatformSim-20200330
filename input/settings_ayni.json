@@ -1,0 +1,355 @@
+{
+  "multicores": [
+    {
+      "name":"MULTICORE0",
+      "ip":0,
+      "nbr_cores":8,
+      "frecuency":1400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    }
+  ],
+  "clusters":[
+    {"name":"SAN LUIS","id":0 ,"multicores": [0]}
+  ],
+  "programs":[
+    {"id":0,"name":"AYNI_BOT","config_conn":["END_POINT"],
+      "activities":[
+        {"id":0,"name":"bot_ayuda","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6336, 0.3347]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[373.6429, 23.8406]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.5016, 0.5693]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.9771, 0.3592]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":0}, "desc":"REDIRECT" }
+        ]
+        },
+        {"id":1,"name":"bot_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[12.8152, 4.8535]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[450.3383, 232.2572]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.5034, 0.2721]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.3562, 0.3244]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":1}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":2,"name":"bot_desinscripcion_aceptar_existe","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[12.5859, 6.5691]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[864.7253, 259.9408]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.9321, 0.3175]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.9091, 0.4402]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":2}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":3,"name":"bot_desinscripcion_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.9181, 0.4860]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[784.3012, 150.5108]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.9459, 0.2706]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.5292, 0.3412]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":3}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":4,"name":"bot_desinscripcion_usuario_noexiste","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.2821, 0.2007]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[370.9763, 11.1368]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.7917, 0.1371]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.7153, 0.1708]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":4}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":5,"name":"bot_emergenciasActivas_cancelar1-emergencias","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[24.1923, 6.0810]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1026.4262, 355.2442]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.3596, 0.1965]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.5847, 0.7781]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":5}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":6,"name":"bot_emergenciasActivas_cancelar2-fin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[33.7000, 6.1249]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1336.8677, 338.6645]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.9870, 0.1749]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.7497, 0.2241]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":6}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":7,"name":"bot_emergenciasActivas_emergenciaEnrolar_ok","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[46.5661, 8.1461]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1963.0002, 300.8648]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.1410, 0.3118]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[6.6473, 0.6784]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":7}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":8,"name":"bot_emergenciasActivas_emergenciaEnrolar_yaTieneEmergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[23.1557, 6.0775]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[933.5638, 308.0250]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.1368, 0.1321]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.2471, 0.2495]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":8}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":9,"name":"bot_emergenciasActivas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[10.8369, 6.7796]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[548.2654, 297.2914]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6090, 0.3109]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.3438, 0.5817]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":9}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":10,"name":"bot_inscripcion_aceptar_nuevo","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[36.8642, 6.3539]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[942.2124, 311.3409]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.7193, 0.3360]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.7946, 0.5978]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":10}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":11,"name":"bot_inscripcion_aceptar_reincripcion","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[15.3589, 7.1204]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[835.4193, 221.2627]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.9754, 0.3116]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.2002, 0.8696]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":11}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":12,"name":"bot_inscripcion_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[6.2003, 5.9208]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[804.2259, 117.4897]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6438, 0.2197]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.4751, 0.1848]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":12}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":13,"name":"bot_inscripcion_usuario_existe","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6790, 0.4215]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[373.2518, 15.2067]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6663, 0.3506]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.9991, 0.4162]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":13}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":14,"name":"bot_misEmergenciasActivas_cancelar1-emergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[18.2651, 0.5407]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[920.8023, 302.9409]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.9376, 0.2154]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.7744, 0.2620]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":14}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":15,"name":"bot_misEmergenciasActivas_cancelar2-tarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[32.4987, 4.9332]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1349.2649, 332.6677]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.2351, 0.2017]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.6171, 1.1817]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":15}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":16,"name":"bot_misEmergenciasActivas_cancelar3-fin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[41.2902, 6.7392]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1783.7221, 342.6918]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.0705, 0.2471]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[6.7982, 0.9413]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":16}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":17,"name":"bot_misEmergenciasActivas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[10.7862, 6.9009]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[375.7475, 13.4583]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6568, 0.4229]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.3425, 0.4352]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":17}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":18,"name":"bot_misEmergenciasActivas_tareaEnrolar_ok","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[50.1001, 8.6317]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1895.7969, 353.1477]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.9925, 0.2944]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[6.6787, 0.9900]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":18}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":19,"name":"bot_misEmergenciasActivas_tareaEnrolar_yaTieneTarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[33.7999, 6.3533]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1353.4982, 329.2396]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.0716, 0.2190]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.8190, 0.5257]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":19}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":20,"name":"bot_misTareas_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[22.9139, 6.3156]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[911.8003, 295.0048]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6760, 0.1083]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.6562, 0.1892]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":20}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":21,"name":"bot_misTareas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[11.0052, 6.8625]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[372.5765, 12.3142]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.6977, 0.4051]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.3660, 0.3064]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":21}, "desc":"REDIRECT"}
+        ]
+        },
+        {"id":22,"name":"bot_misTareas_verDetalle","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[24.2522, 6.3084]}}, "desc": "INT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[886.2807, 290.6594]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.8543, 0.1212]}}, "desc": "WORK-REAL"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.1585, 1.1383]}}, "desc": "COMM-(BOT-INT-API)-(BACKEND-WORK)"},
+          {"type":"WorkRequestToApi","data":{"config_conn":"END_POINT", "next_activity":22}, "desc":"REDIRECT"}
+        ]
+        }
+      ]
+    },
+    {"id":1,"name":"AYNI_BACKEND","config_conn":["DB"],
+      "activities":[
+        {"id":0,"name":"backend_ayuda","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.5675, 0.0473]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0919, 0.0301]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":1,"name":"backend_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[11.3771, 4.9136]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0779, 0.0201]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":2,"name":"backend_desinscripcion_aceptar_existe","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[10.3466, 6.5503]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.3288, 0.0805]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":3,"name":"backend_desinscripcion_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.2052, 0.2060]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1832, 0.0515]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":4,"name":"backend_desinscripcion_usuario_noexiste","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.4872, 0.0639]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0792, 0.0366]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":5,"name":"backend_emergenciasActivas_cancelar1-emergencias","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[19.3363, 6.1786]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.2670, 0.0328]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":6,"name":"backend_emergenciasActivas_cancelar2-fin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[28.4400, 6.1073]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.5077, 0.0434]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":7,"name":"backend_emergenciasActivas_emergenciaEnrolar_ok","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[39.1139, 8.0617]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.8016, 0.0535]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":8,"name":"backend_emergenciasActivas_emergenciaEnrolar_yaTieneEmergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[19.5573, 6.0566]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.3501, 0.0443]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":9,"name":"backend_emergenciasActivas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.3402, 6.7557]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1456, 0.0250]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":10,"name":"backend_inscripcion_aceptar_nuevo","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[32.7679, 6.4073]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.2971, 0.0530]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":11,"name":"backend_inscripcion_aceptar_reincripcion","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[12.8214, 6.9226]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.3311, 0.0734]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":12,"name":"backend_inscripcion_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[4.5597, 5.8858]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1647, 0.0508]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":13,"name":"backend_inscripcion_usuario_existe","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.5899, 0.0625]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0892, 0.0266]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":14,"name":"backend_misEmergenciasActivas_cancelar1-emergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[15.2164, 0.4283]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.2748, 0.0332]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":15,"name":"backend_misEmergenciasActivas_cancelar2-tarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[27.4318, 4.6603]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.4487, 0.0470]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":16,"name":"backend_misEmergenciasActivas_cancelar3-fin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[33.8018, 6.7470]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.6867, 0.0557]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":17,"name":"backend_misEmergenciasActivas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.2755, 6.7820]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1613, 0.0359]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":18,"name":"backend_misEmergenciasActivas_tareaEnrolar_ok","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[42.5962, 8.8291]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.8190, 0.0632]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":19,"name":"backend_misEmergenciasActivas_tareaEnrolar_yaTieneTarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[28.4549, 6.2490]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.5219, 0.0430]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":20,"name":"backend_misTareas_cancelar","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[19.9867, 6.3081]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.2705, 0.0418]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":21,"name":"backend_misTareas_sin","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.4737, 6.7477]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1563, 0.0247]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":22,"name":"backend_misTareas_verDetalle","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[20.7349, 6.3269]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.3565, 0.0418]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":23,"name":"backend_crear_emergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[10.1955, 5.8754]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1029.8563, 46.5297]}}, "desc": "EXT-API"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.3412, 0.0497]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":24,"name":"backend_crear_tarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[13.7960, 0.4962]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.1823, 0.0315]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":25,"name":"backend_finalizar_emergencia","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.7936, 0.0705]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0953, 0.0255]}}, "desc": "WORK-REAL"}
+        ]
+        },
+        {"id":26,"name":"backend_finalizar_tarea","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.7684, 0.0698]}}, "desc": "BD"},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.0882, 0.0225]}}, "desc": "WORK-REAL"}
+        ]
+        }
+      ]
+    }
+  ],
+  "programs_deployments":[
+    { "ip":0, "port":0, "program_id":0, "id": "0_0", "nbr_threads":8, "config_conn":[{"key":"END_POINT","value":"0_1"}]},
+    { "ip":0, "port":1, "program_id":1, "id": "0_1", "nbr_threads":8, "config_conn":[]}
+  ],
+  "types_works":[
+    "WorkProcess","WorkRequestToApi","WorkRequestToMongo"
+  ],
+  "network":{"name":"internet","velocity":0, "unit_trasfer_rate":"kbps"},
+  "client":{ "trace_path" : "input/trace_ayni.data" },
+  "monitor_window_size_ms":60000
+}

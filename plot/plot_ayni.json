@@ -1,0 +1,9 @@
+{
+  "ResumeUsedPercentage":{
+    "title":"server utilization, one min by windows",
+    "xLabel":"windows",
+    "yLabel":"percentage",
+    "xRange":"[0: 20]",
+    "yRange":"[0: 110]"
+  }
+}

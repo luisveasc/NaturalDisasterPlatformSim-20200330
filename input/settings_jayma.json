@@ -1,0 +1,69 @@
+{
+  "multicores": [
+    {
+      "name":"MULTICORE0",
+      "ip":0,
+      "nbr_cores":8,
+      "frecuency":1400,
+      "ram": { "size_bytes": 4000000000000, "occupied_bytes": 100000 },
+      "hhd": { "size_bytes": 1000000000000000,"occupied_bytes": 1200000 }
+    }
+  ],
+  "clusters":[
+    {"name":"SAN LUIS","id":0 ,"multicores": [0]}
+
+  ],
+  "programs":[
+    {"id":0,"name":"JAYMA_BOT","config_conn":["END_POINT"],
+      "activities":[
+        {"id":0,"name":"MENU_PRINCIPAL","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.763189, 0.323704]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.777777, 0.833333]}}},
+
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.414034, 0.101778]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.555555, 2.743679]}}}
+          ]
+        },
+
+        {"id":1,"name":"POSTBACK_INFORMACIONES_Y_LOCALIZACION","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.789145, 0.189192]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3, 1.322875]}}},
+
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.253235, 0.479893]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[31.77777, 6.796649]}}},
+
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.394803, 0.0819436]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[30.44444 ,5.456901]}}}
+        ]
+        },
+
+
+        {"id":2,"name":"CONTACTOS","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.882156, 0.227180]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[2.666666, 0.707106]}}},
+
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.604086, 0.732804]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.222222, 2.587362]}}}
+        ]
+        },
+        {"id":3,"name":"AGREGAR_CONTACTO","works":[
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[1.342478, 1.88485]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[3.888888, 3.01846]}}},
+
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[0.375740, 0.06618]}}},
+          {"type":"WorkProcess","data":{"time_fun_distribution":{"type":"norm","params":[8.222222, 3.767551]}}}
+
+        ]
+        }
+      ]
+    }
+  ],
+  "programs_deployments":[
+      { "ip":0, "port":0, "program_id":0, "id": "0_0", "nbr_threads":10, "config_conn":[{"key":"END_POINT","value":"1_1"}]}
+  ],
+  "types_works":[
+    "WorkProcess","WorkRequestToApi","WorkRequestToMongo"
+  ],
+  "network":{"name":"internet","velocity":100, "unit_trasfer_rate":"kbps"},
+  "client":{ "trace_path" : "input/trace.data" }
+}
